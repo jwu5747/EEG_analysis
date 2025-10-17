@@ -12,6 +12,15 @@ library(ggplot2)
 library(reshape2)
 
 # ----------------------------------------------------------------------------
+# USER-INPUT (ONLY MODIFY THE BELOW WITH YOUR DIRECTORY)
+# ----------------------------------------------------------------------------
+
+# File paths
+base_dir <- "D:/ds/test/" #This is where all our files will be saved
+matlab_dir <- "D:/ds/participant/" #This is the directory containing all participant files
+
+
+# ----------------------------------------------------------------------------
 # GLOBAL VARIABLES
 # ----------------------------------------------------------------------------
 
@@ -26,11 +35,6 @@ electrodes <- c(
   'F2', 'AF4', 'AF8'
 )
 
-
-
-# File paths
-base_dir <- "D:/ds/test/" #This is where all our files will be saved
-matlab_dir <- "D:/ds/participant/" #This is the directory containing all participant files
 
 participant.names <- list.files(path = matlab_dir)
 participant <- list.files(path = matlab_dir, full.names = TRUE)
@@ -138,7 +142,6 @@ registerDoParallel(cl)
 # MAIN ANALYSIS - Target
 # ----------------------------------------------------------------------------
 
-
 for (i in length(participant)) {
   tmp <- readMat(participant[i])
   datatgt <- tmp$datatgt[2][[1]]
@@ -157,7 +160,6 @@ for (i in length(participant)) {
   
   save_cormatrix(datatgt, save_dir, "hcor")
 }
-
 
 # ----------------------------------------------------------------------------
 # CLEANUP (remember to run this when done)
