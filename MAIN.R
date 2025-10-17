@@ -100,7 +100,7 @@ measure_cor <- function(dat, elec1, elec2, lat1, lat2, type = 'hcor') {
 
 # Save full correlation matrix for all electrode pairs across time
 save_cormatrix <- function(dat, save_dir, cor_type) {
-  n <- 250
+  n <- 250 #this has been hard-coded, note that we reshape our 1000 x n into 250 x (4n) where n is number of trials (or in this case tones)
 
   for (l in 1:62) {
     channel1 <- electrodes[l]
