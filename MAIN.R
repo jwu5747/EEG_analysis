@@ -17,7 +17,7 @@ library(reshape2)
 
 # File paths
 base_dir <- "D:/ds/test/" #This is where all our files will be saved
-matlab_dir <- "D:/ds/participant/" #This is the directory containing all participant files
+matlab_dir <- "D:/ds/participant/" #This is the directory containing all participant files.
 
 
 # ----------------------------------------------------------------------------
@@ -34,7 +34,6 @@ electrodes <- c(
   'PO8', 'P6', 'P2', 'CP4', 'TP8', 'C6', 'C2', 'FC4', 'FT8', 'F6',
   'F2', 'AF4', 'AF8'
 )
-
 
 participant.names <- list.files(path = matlab_dir)
 participant <- list.files(path = matlab_dir, full.names = TRUE)
