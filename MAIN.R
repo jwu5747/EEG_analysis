@@ -163,4 +163,4 @@ for (i in length(participant)) {
 # CLEANUP (remember to run this when done)
 # ----------------------------------------------------------------------------
 
-# stopCluster(cl)
+stopCluster(cl)
